@@ -1,0 +1,812 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/strict.dtd">    
+
+<html>
+<head>
+<title>Identcode barcode</title>
+
+
+
+
+<link href="style3.css" type="text/css" rel="stylesheet">
+
+<link href="manual.css" type="text/css" rel="stylesheet">
+
+<script>
+startList = function() {
+// Required update: if the page has no primary nav, don't do anything, don't give an error.
+  if (document.all&&document.getElementById) {
+    navRoot = document.getElementById("primarynav");
+    if (navRoot) {
+      for (i=0; i<navRoot.childNodes.length; i++) {
+        node = navRoot.childNodes[i];
+        if (node.nodeName=="LI") {
+          node.onmouseover=function() {
+            this.className+=" over";
+          }
+          node.onmouseout=function() {
+            this.className=this.className.replace(" over", "");
+          }
+} } } } }
+</script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-11716928-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+</script>
+
+
+<script type="text/javascript">
+function getElementsByClassName(className) 
+{
+	var all = document.all ? document.all : document.getElementsByTagName('*');
+	var elements = new Array();
+		for (var e = 0; e < all.length; e++) 
+		{
+			if (all[e].className == className) {
+			elements[elements.length] = all[e];
+		}
+	}
+	return elements;
+}
+
+function easytabs(active) 
+{
+	var x1=getElementsByClassName("tabcontent1");
+	var x2=getElementsByClassName("tabcontent2");
+	var y1=getElementsByClassName("tablink1");
+	var y2=getElementsByClassName("tablink2");
+	if (active == 1)
+	{
+		for (var i=0; i<x1.length; i++)
+		{
+			x1[i].style.display = 'block';
+			x2[i].style.display = 'none';
+			y1[i].style.background = '#f6f7fb';
+			y2[i].style.background = 'none';
+		}
+	}
+	else
+	{
+		for (var i=0; i<x1.length; i++)
+		{
+			x1[i].style.display = 'none';
+			x2[i].style.display = 'block';
+			y1[i].style.background = 'none';
+			y2[i].style.background = '#f6f7fb';
+		}
+	}
+}
+function recommend(active) 
+{
+	var x1=getElementsByClassName("ka_more_recommend_one");
+	var x2=getElementsByClassName("ka_more_recommend_two");
+	var y1=getElementsByClassName("see_more_barcodes_one");
+	var y2=getElementsByClassName("see_more_barcodes_two");
+	if (active == 1)
+	{
+		for (var i=0; i<x1.length; i++)
+		{
+			x1[i].style.display = 'block';
+			y1[i].style.display = 'none';
+		}
+	}
+	if (active == 2)
+	{
+		for (var i=0; i<x1.length; i++)
+		{
+			x1[i].style.display = 'none';
+			y1[i].style.display = 'block';
+		}
+	}
+	if (active == 3)
+	{
+		for (var i=0; i<x1.length; i++)
+		{
+			x2[i].style.display = 'block';
+			y2[i].style.display = 'none';
+		}
+	}
+	if (active == 4)
+	{
+		for (var i=0; i<x1.length; i++)
+		{
+			x2[i].style.display = 'none';
+			y2[i].style.display = 'block';
+		}
+	}
+}
+
+function random() 
+{
+	var x1=getElementsByClassName("ka_randoms_area_hide");
+	var y1=getElementsByClassName("ka_morerandom");
+	for (var i=0; i<y1.length; i++){
+		if (y1[i].innerText=="more>"){
+		x1[i].style.display = 'block';
+		y1[i].innerText="less>"
+		}
+		else{
+		x1[i].style.display = 'none';
+		y1[i].innerText="more>"
+		}
+	}
+}
+</script>
+
+
+
+</head><body>
+<div class="header">
+				<div class="header_logo"><a href="http://www.keepautomation.com" title="Barcode Generator, Scanner SDK, Software"><img class="logo" src="logo.png" border=0;></a></div>
+			</div>
+			<div  class="pHMenuWrap" id="primary-nav" style="padding-top:10px;">
+				<div class="pHMenuInnerWrap">
+				
+		<ul id="primary-nav" class=l1 style=>
+  		<li style="width: 240px;">	
+  			<a href="http://www.keepautomation.com/products/net_barcode/" >KA.Barcode for .NET Suite</a>
+  		</li>
+		<li style="width: 250px;">	
+  			<a href="../Developer-Guide.html">How to Create Barcode in .NET</a>
+  		</li>
+		<li style="width: 200px;">
+			<a href="http://www.keepautomation.com/purchase/net_barcode_generator.html" title="Purchase KeepAutomation.com License" rel="nofollow">Purchase</a>
+		</li>
+		<li style="width: 160px;">
+			<a href="http://www.keepautomation.com/support/" title="Service Support from KeepAutomation" rel="nofollow">Support</a>
+		</li>
+		<li style="width: 160px;">
+			<a href="http://www.keepautomation.com/corporate/" title="KeepAutomation" rel="nofollow">Corporate</a>
+		</li>
+		</ul>
+				
+				
+					
+					
+				</div>
+			</div>
+			<div class="menu_shadow"></div>
+
+
+
+
+<div class="container">
+<table  cellpadding="0" cellspacing="0">
+<tr valign="top">
+	<td>
+	<div class="container_left">
+
+
+	
+<!-- page-LeftMenu-start -->
+	<div class="left_column">
+		<div class="auto" id="auto">
+
+<div class="products">Developer Guide</div>
+
+
+<div class="products_nolink2" style="height:5px;"></div>
+<div class="links"><a title="Generate barcode in C#" href="../Developer-Guide.html">How to Generate Barcode in .NET</a></div>
+
+<div class="links_indentation"><a href="how_in_class.html">in .NET Class</a></div>
+<div class="links_indentation"><a href="how_in_aspnet.html">in ASP.NET</a></div>
+<div class="links_indentation"><a href="how_in_winforms.html">in WinForms</a></div>
+<div class="links_indentation"><a href="how_in_rdlc.html">in RDLC</a></div>
+<div class="links_indentation"><a href="how_in_crystal_reports.html">in Crystal Reports</a></div>
+<div class="links_indentation"><a href="how_in_ssrs.html">in SSRS</a></div>
+
+
+<div class="products_nolink2" style="height:5px;"></div>
+<div class="links_nolink">2D (Matrix) Barcodes</div>
+<div class="links_indentation"><a href="data_matrix.html">Data Matrix</a></div>
+<div class="links_indentation"><a href="pdf_417.html">PDF417</a></div>
+<div class="links_indentation"><a href="qrcode.html">QR Code</a></div>
+
+
+<div class="products_nolink2" style="height:5px;"></div>
+<div class="links_nolink">1D (Linear) Barcodes</div>
+<div class="links_indentation"><a href="codabar.html">Codabar</a></div>
+<div class="links_indentation"><a href="code_11.html">Code 11</a></div>
+<div class="links_indentation"><a href="code_39.html">Code 39</a></div>
+<div class="links_indentation"><a href="code_93.html">Code 93</a></div>
+<div class="links_indentation"><a href="code_128.html">Code 128</a></div>
+<div class="links_indentation"><a href="code25.html">Code 2 of 5</a></div>
+<div class="links_indentation"><a href="ean_8.html">EAN-8</a></div>
+<div class="links_indentation"><a href="ean_13.html">EAN-13</a></div>
+<div class="links_indentation"><a href="ean_128.html">GS1-128</a></div>
+
+<div class="links_indentation_selected">Identcode</div>
+<div class="links_indentation"><a href="onecode.html">Intelligent Mail (Onecode)</a></div>
+<div class="links_indentation"><a href="interleaved25.html">Interleaved 2 of 5</a></div>
+<div class="links_indentation"><a href="isbn.html">ISBN</a></div>
+<div class="links_indentation"><a href="issn.html">ISSN</a></div>
+<div class="links_indentation"><a href="itf_14.html">ITF-14</a></div>
+<div class="links_indentation"><a href="leitcode.html">Leitcode</a></div>
+<div class="links_indentation"><a href="msi.html">MSI</a></div>
+<div class="links_indentation"><a href="planet.html">PLANET</a></div>
+<div class="links_indentation"><a href="postnet.html">POSTNET</a></div>
+<div class="links_indentation"><a href="rm4scc.html">RM4SCC</a></div>
+<div class="links_indentation"><a href="upca.html">UPC-A</a></div>
+<div class="links_indentation"><a href="upce.html">UPC-E</a></div>
+
+
+<div class="shadow_1"></div>
+	</td>
+
+	<td>
+	<div class="container_right">
+		<div class="ka_banner">
+			<div class="ka_banner_left"></div>
+			<div class="ka_banner_right">
+
+				<div class="ka_banner_title">KA.Barcode for .NET</div>
+
+				<div class="ka_main_title">How to Create Identcode</div>
+
+				<div class="ka_main_subtitle">How to Generate Identcode Barcode Images Using Visual C# in .NET Applications</div>
+
+			</div>
+		</div>
+		<div class="shadow_banner">
+		</div>
+
+
+
+
+<div class="contents">
+
+
+
+
+
+
+
+<div class="sectitle">
+<a name="Demo"></a>Quick to Start
+</div>
+
+<div class="text">
+Copy the following code to your C# class, run the program, and create a barcode image in your local system.
+</div>
+
+<div class="ka_code">C# Sample code
+
+
+
+<pre class="csharpcode">
+        using KeepAutomation.Barcode.Bean;
+        
+        //Create BarCode object in C#
+        BarCode identcode= new BarCode();  
+        
+        //Set barcode symbology type to Identcode              
+        identcode. Symbology = Symbology. Identcode; 
+         
+        //Set Identcode encoding valid data: 11 numeric digits excluding the checksum digit.           
+        identcode.CodeToEncode = "14785236987"; 
+        
+       <strong> //Set Identcode image size</strong>
+        
+        identcode.BarcodeUnit = BarcodeUnit.Pixel;   // Unit of measure, support pixel, cm and inch. 
+        identcode.DPI = 72;                          // Identcode image resolution in dpi
+        identcode.X = 3;                             // Identcode bar module width (X dimention)
+        identcode.Y = 60;                            // Identcode bar module height (Y dimention)
+        identcode.BarCodeWidth=200;                  // Identcode barcode image width
+        identcode.LeftMargin = 0;		     // Image left margin size, minimum is 10X.
+        identcode.RightMargin = 0;	             // Image right margin size, minimum is 10X.
+        identcode.TopMargin = 0;		     // Identcode image top margin size
+        identcode.BottomMargin = 0;	             // Identcode image bottom margin size
+        identcode.Orientation = Orientation.Degree0; // Orientation, 90, 180, 270 degrees supported.
+        
+      <strong>  //Set Identcode human readable text style</strong>
+        
+        identcode.DisplayText = true;                // Display human readable text
+        identcode.TextFont = new Font("Arial", 10f, FontStyle.Regular);       
+        identcode.TextMargin = 6;                    // Space between barcode and text
+        
+        //Generate Identcode barcodes in <strong>image</strong> GIF <strong>format</strong>
+        identcode.generateBarcodeToImageFile("barcode-identcode-csharp.gif");  
+           
+        //Create Identcode barcodes in <strong>Stream</strong> object
+        identcode.generateBarcodeToStream(".NET System.IO.Stream Object"); 
+        
+        //Draw & Print Identcode barcodes to <strong>Graphics</strong> object
+        identcode.generateBarcodeToGraphics(".NET System.Drawing.Graphics Object");
+        
+        //Generate Identcode barcodes & write to <strong>byte</strong>[] 
+        byte[] barcodeInBytes = identcode.generateBarcodeToByteArray();
+        
+        //Generate Identcode barcodes & encode to System.Drawing.Bitmap object 
+        Bitmap barcodeInBitmap = identcode.generateBarcodeToBitmap();
+        
+        Other image formats including PNG, BMP, TIFF and JPG are also available to suit your needs.
+
+    	
+    	</pre>
+
+
+
+
+
+
+</div>
+
+
+<div class="sectitle">
+Identcode Valid Data Sets
+</div>
+
+<div class="text">
+
+<ul>
+<li>0, 1, 2, 3, 4, 5, 6, 7, 8, 9 
+</ul>
+
+</div>
+
+
+
+<div class="sectitle">
+Generate Barcode Image in Specified Width and Height
+</div>
+
+<div class="text">
+
+<ul>
+<li>Set property <b>AutoSizeAdjust</b> to true
+<br/><br/>
+<li>Set property <b>DPI</b> to be the same or higher as your printer's resolution
+<br/><br/>
+<li>Set property <b>BarcodeUnit</b> to inch or cm
+<br/><br/>
+<li>Set property <b>BarCodeWidth</b> and <b>BarCodeHeight</b> to your required image width and height
+</ul>
+
+</div>
+
+
+
+<div class="sectitle">
+<a name="RDLC"></a>Identcode Property Settings
+</div>
+
+<div class="text">
+
+<table class="tBPSTable" width=100%>
+
+<tr class="trTitle">
+	<td>
+		Class Attribute
+	</td>
+	<td>
+		HTTP Attribute
+	</td>
+	<td>
+		Default Value
+	</td>
+	<td>
+		Note
+	</td>
+</tr>
+<tr>
+	<td colspan=4 class="sectionTd">
+		Basic
+	</td>
+</tr>
+<tr>
+	<td>
+		Symbology
+	</td>
+	<td>
+		symbology
+	</td>
+	<td>
+		Code128Auto
+	</td>
+	<td>
+		Barcode symoblogy type
+	</td>
+</tr>
+
+<tr  class="trEven">
+	<td>
+		CodeToEncode
+	</td>
+	<td>
+		code-to-encode
+	</td>
+	<td>
+		"128"
+	</td>
+	<td>
+		Barcode value to encode.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		ChecksumEnabled
+	</td>
+	<td>
+		checksum-enabled
+	</td>
+	<td>
+		false
+	</td>
+	<td>
+		Set to true, adding barcode checksum digit.
+	</td>
+</tr>
+
+<tr  class="trEven">
+	<td>
+		ImageFormat
+	</td>
+	<td>
+		image-format
+	</td>
+	<td>
+		ImageFormat.Png
+	</td>
+	<td>
+		Barcode encoded image format.
+	</td>
+</tr>
+<tr>
+	<td colspan=4 class="sectionTd">
+		Barcode Size
+	</td>
+</tr>
+<tr>
+	<td>
+		AutoSizeAdjust
+	</td>
+	<td>
+		auto-size-adjust
+	</td>
+	<td>
+		false
+	</td>
+	<td>
+		If true, barcode X, Y module will be auto-adjusted.
+	</td>
+</tr>
+
+<tr  class="trEven">
+	<td>
+		BarcodeUnit
+	</td>
+	<td>
+		barcode-unit
+	</td>
+	<td>
+		BarcodeUnit.Pixel
+	</td>
+	<td>
+		Unit of measure for all size related settings. 0: pixel; 1: inch; 2: cm.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		X
+	</td>
+	<td>
+		x
+	</td>
+	<td>
+		1
+	</td>
+	<td>
+		 Barcode module width (narrow bar).
+	</td>
+</tr>
+
+<tr  class="trEven">
+	<td>
+		Y
+	</td>
+	<td>
+		y
+	</td>
+	<td>
+		50
+	</td>
+	<td>
+		Linear barcode bar height / 2D barcode module height.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		LeftMargin
+	</td>
+	<td>
+		left-margin
+	</td>
+	<td>
+		0
+	</td>
+	<td>
+		Barcode image left margin.
+	</td>
+</tr>
+
+<tr  class="trEven">
+	<td>
+		RightMargin
+	</td>
+	<td>
+		right-margin
+	</td>
+	<td>
+		0
+	</td>
+	<td>
+		Barcode image right margin.
+	</td>
+</tr>
+
+
+<tr>
+	<td>
+		TopMargin
+	</td>
+	<td>
+		top-margin
+	</td>
+	<td>
+		0
+	</td>
+	<td>
+		Barcode image top margin.
+	</td>
+</tr>
+
+<tr  class="trEven">
+	<td>
+		BottomMargin
+	</td>
+	<td>
+		bottom-margin
+	</td>
+	<td>
+		0
+	</td>
+	<td>
+		Barcode image bottom margin.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		DPI
+	</td>
+	<td>
+		dpi
+	</td>
+	<td>
+		72
+	</td>
+	<td>
+		Barcode image resolution in dpi.
+	</td>
+</tr>
+
+<tr  class="trEven">
+	<td>
+		Orientation
+	</td>
+	<td>
+		orientation
+	</td>
+	<td>
+		Orientation.Degree0
+	</td>
+	<td>
+		Barcode rotation angle.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		BarCodeWidth
+	</td>
+	<td>
+		barcode-width
+	</td>
+	<td>
+		0
+	</td>
+	<td>
+		Whole barcode width.
+	</td>
+</tr>
+
+<tr  class="trEven">
+	<td>
+		BarCodeHeight
+	</td>
+	<td>
+		barcode-height
+	</td>
+	<td>
+		0
+	</td>
+	<td>
+		Whole barcode height.
+	</td>
+</tr>
+
+<tr>
+	<td colspan=4 class="sectionTd">
+		Barcode Text Style
+	</td>
+</tr>
+<tr>
+	<td>
+		DisplayText
+	</td>
+	<td>
+		display-text
+	</td>
+	<td>
+		true
+	</td>
+	<td>
+		Set to true, displaying barcode value text, otherwise do not display.
+	</td>
+</tr>
+
+<tr  class="trEven">
+	<td>
+		DisplayChecksum
+	</td>
+	<td>
+		displace-checksum
+	</td>
+	<td>
+		true
+	</td>
+	<td>
+		Set to true, displaying barcode checksum digit, otherwise do not display.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		TextFont
+	</td>
+	<td>
+		text-font
+	</td>
+	<td>
+		new Font(" Arial", 10 f, FontStyle.Regular)
+
+	</td>
+	<td>
+		Barcode text font style.
+	</td>
+</tr>
+
+<tr  class="trEven">
+	<td>
+		TextMargin
+	</td>
+	<td>
+		text-margin
+	</td>
+	<td>
+		6
+	</td>
+	<td>
+		Margin between barcode and text.
+	</td>
+</tr>
+
+<tr>
+	<td colspan=4 class="sectionTd">
+		Identcode Specific Settings
+	</td>
+</tr>
+<tr>
+	<td>
+		WideNarrowRatio
+	</td>
+	<td>
+		wide-narrow-ratio
+	</td>
+	<td>
+		2.0f
+	</td>
+	<td>
+		Identcode, Leitcode, or Interleaved 2 of 5 wide bar width vs narrow bar width ratio.
+	</td>
+</tr>
+
+</table>
+</div>
+
+
+<br/><br/><br/><br/><br/><br/>
+
+
+
+
+	</td>
+
+
+</tr>
+ 
+
+
+
+
+
+
+
+<tr><td colspan="2"> 
+
+
+
+
+<script type="text/javascript">
+
+(function(){
+var navWrap=document.getElementById("auto");
+var nav1s=navWrap.getElementsByTagName("li");
+var nav2s=navWrap.getElementsByTagName("span");
+for(var i=0,len=nav1s.length;i < len;i++)
+{
+nav1s[i].onclick=(function(i)
+	{
+	return function()
+		{
+		var currentStatus = nav2s[i].style.display;
+		for(var j=0;j < len;j++)
+			{
+			nav2s[j].style.display="none";
+			nav1s[j].style.background = "url(/files/menu_li2.jpg)";
+			}
+			if (currentStatus == "block")
+			{
+			nav2s[i].style.display="none";
+			}
+			else
+			{
+			nav2s[i].style.display="block";
+			nav1s[i].style.background = "url(/files/menu_li1.jpg)";
+			}
+		}
+		
+	}
+)(i)
+}
+})()
+</script>			
+					
+					<div class="copyright">
+						<table cellpadding="0" cellspacing="0" style="font-size:12px; color:#ffffff;">
+						<tr>
+							<td rowspan="2" width="188px" style="font-size:12px; color:#ffffff;"><img src="logo.png" width="158px" height="33px" /></td>
+							<td style="font-size:12px; color:#ffffff;">
+							KeepAutomation provides complete barcode automation solutions for Business Application, Enterprise Developement Project, and
+							mobile applications.
+							</td>
+						</tr>
+						</table>
+					</div>
+
+
+
+
+</td></tr></table></div></body></html>
+
+
+

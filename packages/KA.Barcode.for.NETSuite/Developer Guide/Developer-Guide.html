@@ -1,0 +1,484 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/strict.dtd">    
+
+<html>
+<head>
+<title>How to Create barcodes in .NET</title>
+
+
+
+<link href="Developer-Guide_files/style3.css" type="text/css" rel="stylesheet">
+
+<link href="Developer-Guide_files/manual.css" type="text/css" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+<script>
+startList = function() {
+// Required update: if the page has no primary nav, don't do anything, don't give an error.
+  if (document.all&&document.getElementById) {
+    navRoot = document.getElementById("primarynav");
+    if (navRoot) {
+      for (i=0; i<navRoot.childNodes.length; i++) {
+        node = navRoot.childNodes[i];
+        if (node.nodeName=="LI") {
+          node.onmouseover=function() {
+            this.className+=" over";
+          }
+          node.onmouseout=function() {
+            this.className=this.className.replace(" over", "");
+          }
+} } } } }
+</script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-11716928-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+</script>
+
+
+<script type="text/javascript">
+function getElementsByClassName(className) 
+{
+	var all = document.all ? document.all : document.getElementsByTagName('*');
+	var elements = new Array();
+		for (var e = 0; e < all.length; e++) 
+		{
+			if (all[e].className == className) {
+			elements[elements.length] = all[e];
+		}
+	}
+	return elements;
+}
+
+function easytabs(active) 
+{
+	var x1=getElementsByClassName("tabcontent1");
+	var x2=getElementsByClassName("tabcontent2");
+	var y1=getElementsByClassName("tablink1");
+	var y2=getElementsByClassName("tablink2");
+	if (active == 1)
+	{
+		for (var i=0; i<x1.length; i++)
+		{
+			x1[i].style.display = 'block';
+			x2[i].style.display = 'none';
+			y1[i].style.background = '#f6f7fb';
+			y2[i].style.background = 'none';
+		}
+	}
+	else
+	{
+		for (var i=0; i<x1.length; i++)
+		{
+			x1[i].style.display = 'none';
+			x2[i].style.display = 'block';
+			y1[i].style.background = 'none';
+			y2[i].style.background = '#f6f7fb';
+		}
+	}
+}
+function recommend(active) 
+{
+	var x1=getElementsByClassName("ka_more_recommend_one");
+	var x2=getElementsByClassName("ka_more_recommend_two");
+	var y1=getElementsByClassName("see_more_barcodes_one");
+	var y2=getElementsByClassName("see_more_barcodes_two");
+	if (active == 1)
+	{
+		for (var i=0; i<x1.length; i++)
+		{
+			x1[i].style.display = 'block';
+			y1[i].style.display = 'none';
+		}
+	}
+	if (active == 2)
+	{
+		for (var i=0; i<x1.length; i++)
+		{
+			x1[i].style.display = 'none';
+			y1[i].style.display = 'block';
+		}
+	}
+	if (active == 3)
+	{
+		for (var i=0; i<x1.length; i++)
+		{
+			x2[i].style.display = 'block';
+			y2[i].style.display = 'none';
+		}
+	}
+	if (active == 4)
+	{
+		for (var i=0; i<x1.length; i++)
+		{
+			x2[i].style.display = 'none';
+			y2[i].style.display = 'block';
+		}
+	}
+}
+
+function random() 
+{
+	var x1=getElementsByClassName("ka_randoms_area_hide");
+	var y1=getElementsByClassName("ka_morerandom");
+	for (var i=0; i<y1.length; i++){
+		if (y1[i].innerText=="more>"){
+		x1[i].style.display = 'block';
+		y1[i].innerText="less>"
+		}
+		else{
+		x1[i].style.display = 'none';
+		y1[i].innerText="more>"
+		}
+	}
+}
+</script>
+
+
+
+</head><body>
+<div class="header">
+				<div class="header_logo"><a href="http://www.keepautomation.com" title="Barcode Generator, Scanner SDK, Software"><img class="logo" src="Developer-Guide_files/logo.png" border=0;></a></div>
+			</div>
+			<div  class="pHMenuWrap" id="primary-nav" style="padding-top:10px;">
+				<div class="pHMenuInnerWrap">
+				
+		<ul id="primary-nav" class=l1 style=>
+  		<li style="width: 240px;">	
+  			<a href="http://www.keepautomation.com/products/net_barcode/" >KA.Barcode for .NET</a>
+  		</li>
+		<li style="width: 250px;">	
+  			<a href="Developer-Guide.html">How to Create Barcode in .NET</a>
+  		</li>
+		<li style="width: 200px;">
+			<a href="http://www.keepautomation.com/purchase/net_barcode_generator.html" title="Purchase KeepAutomation.com License" rel="nofollow">Purchase</a>
+		</li>
+		<li style="width: 160px;">
+			<a href="http://www.keepautomation.com/support/" title="Service Support from KeepAutomation" rel="nofollow">Support</a>
+		</li>
+		<li style="width: 160px;">
+			<a href="http://www.keepautomation.com/corporate/" title="KeepAutomation" rel="nofollow">Corporate</a>
+		</li>
+		</ul>
+				
+				
+					
+					
+				</div>
+			</div>
+			<div class="menu_shadow"></div>
+
+
+
+
+<div class="container">
+<table  cellpadding="0" cellspacing="0">
+<tr valign="top">
+	<td>
+	<div class="container_left">
+
+
+	
+<!-- page-LeftMenu-start -->
+	<div class="left_column">
+		<div class="auto" id="auto">
+
+<div class="products">Developer Guide</div>
+
+
+<div class="products_nolink2" style="height:5px;"></div>
+
+<div class="links_selected">How to Generate Barcode in .NET</div>
+
+<div class="links_indentation"><a href="Developer-Guide_files/how_in_class.html">in .NET Class</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/how_in_aspnet.html">in ASP.NET</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/how_in_winforms.html">in WinForms</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/how_in_rdlc.html">in RDLC</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/how_in_crystal_reports.html">in Crystal Reports</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/how_in_ssrs.html">in SSRS</a></div>
+
+
+
+<div class="products_nolink2" style="height:5px;"></div>
+<div class="links_nolink">2D (Matrix) Barcodes</div>
+<div class="links_indentation"><a href="Developer-Guide_files/data_matrix.html">Data Matrix</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/pdf_417.html">PDF417</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/qrcode.html">QR Code</a></div>
+
+
+<div class="products_nolink2" style="height:5px;"></div>
+<div class="links_nolink">1D (Linear) Barcodes</div>
+
+<div class="links_indentation"><a href="Developer-Guide_files/codabar.html">Codabar</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/code_11.html">Code 11</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/code_39.html">Code 39</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/code_93.html">Code 93</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/code_128.html">Code 128</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/code25.html">Code 2 of 5</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/ean_8.html">EAN-8</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/ean_13.html">EAN-13</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/ean_128.html">GS1-128</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/identcode.html">Identcode</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/onecode.html">Intelligent Mail (Onecode)</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/interleaved25.html">Interleaved 2 of 5</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/isbn.html">ISBN</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/issn.html">ISSN</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/itf_14.html">ITF-14</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/leitcode.html">Leitcode</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/msi.html">MSI</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/planet.html">PLANET</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/postnet.html">POSTNET</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/rm4scc.html">RM4SCC</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/upca.html">UPC-A</a></div>
+<div class="links_indentation"><a href="Developer-Guide_files/upce.html">UPC-E</a></div>
+
+
+<div class="shadow_1"></div>
+	</td>
+
+	<td>
+	<div class="container_right">
+		<div class="ka_banner">
+			<div class="ka_banner_left"></div>
+			<div class="ka_banner_right">
+
+				<div class="ka_banner_title">KA.Barcode for .NET</div>
+
+				<div class="ka_main_title">How to Create Barcodes in .NET</div>
+
+				<div class="ka_main_subtitle">How to Generate 1D & 2D Barcode Images Using Visual C#</div>
+
+			</div>
+		</div>
+		<div class="shadow_banner">
+		</div>
+
+
+
+
+<div class="contents">
+
+
+
+<div class="sectitle">
+<a name="Demo"></a>Package Overview
+</div>
+
+<div class="text">
+
+KA.Barcode.for.NETSuite package includes:
+<ul>
+<li>"<b>/DLL/Net20/KeepAutomation.Barcode.*.dll</b>" includes all dlls built using .net framework 2.0
+<br/><br/>
+<li>"<b>/DLL/Net40/KeepAutomation.Barcode.*.dll</b>" includes all dlls built using .net framework 4.0
+<br/><br/>
+<li>"<b>/DLL/SSRS/KeepAutomation.Barcode.*.dll</b>" includes all dlls for SSRS reports
+<br/><br/>
+<li>"<b>/Developer Guide/Developer-Guide.html</b>" includes guide for developers to use the SDK.
+<br/><br/>
+<li>"<b>/License Agreement/</b>" includes license agreement document
+<br/><br/>
+<li>"<b>/Buy Now/</b>" includes link for online license purchase
+<br/><br/>
+<li>"<b>/barcode/</b>" includes ASP.NET web application
+<br/><br/>
+<li>"<b>/Sample Data/</b>" includes sample data set for demo code
+<br/><br/>
+</ul>
+
+</div>
+
+
+
+<div class="sectitle">
+<a name="Demo"></a>Barcode Generate in Various .NET Project Templates
+</div>
+
+<div class="text">
+
+<br/><br/>
+<a name="Demo"></a><a href="Developer-Guide_files/how_in_class.html">Create barcodes in .NET Class</a>
+
+<br/><br/>
+<a name="Demo"></a><a href="Developer-Guide_files/how_in_aspnet.html">Create barcodes in ASP.NET</a>
+
+<br/><br/>
+<a name="Demo"></a><a href="Developer-Guide_files/how_in_winforms.html">Create barcodes in .NET WinForms</a>
+
+<br/><br/>
+<a name="Demo"></a><a href="Developer-Guide_files/how_in_rdlc.html">Create barcodes in RDLC reports</a>
+<br/><br/>
+<a name="Demo"></a><a href="Developer-Guide_files/how_in_crystal_reports.html">Create barcodes in Crystal Reports</a>
+<br/><br/>
+<a name="Demo"></a><a href="Developer-Guide_files/how_in_ssrs.html">Create barcodes in SSRS reports</a>
+
+</div>
+
+
+
+
+
+
+
+<div class="sectitle">
+<a name="Barcodes"></a>Barcode Property Settings
+</div>
+
+<br/><br/>
+
+
+<table cellpadding="0" cellspacing="0" class="ka_barcode_s">
+			<tr>
+				<td style="background:#a8b4d3; color:#ffffff; font-size:18px;" width="222px">2D / Matrix Barcodes</td>
+				<td style="background:#96a6cb; color:#ffffff; font-size:18px;" colspan="4">1D / Linear Barcodes</td>
+			</tr>
+			<tr>
+				<td rowspan="4">
+				<a href="Developer-Guide_files/qrcode.html"><b>QR Code</b></a><br/>
+				QR Code is a matrix code created by Japanese corporation Denso-Wave in 1994.<br/><br/>
+				<a href="Developer-Guide_files/data_matrix.html"><b>Data Matrix</b></a><br/>
+				Data Matrix, also known as Data Matrix ECC200, can encode all 128 characters of ASCII.<br/><br/>
+				<a href="Developer-Guide_files/pdf_417.html"><b>PDF-417</b></a><br/>
+				PDF 417 is a stacked linear bar code symbol used in a variety of applications.
+				</td>
+				<td style="background:#cdd6e6; font-size:16px;" colspan="2">EAN/UPC Barcodes</td>
+				<td style="background:#dce2ed; font-size:16px;" colspan="2">Postal Barcodes</td>
+			</tr>
+			<tr>
+				<td style="background:#edf1f7; padding:15px 0px 15px 20px;" width="90px">
+				<a href="Developer-Guide_files/ean_128.html"><b>EAN-128</b></a><br/>
+				<a href="Developer-Guide_files/ean_13.html"><b>EAN-13</b></a><br/>
+				<a href="Developer-Guide_files/upca.html"><b>UPC-A</b></a>
+				</td>
+				<td style="background:#edf1f7; padding:15px 0px 15px 5px;" width="132px">
+				<a href="Developer-Guide_files/ean_8.html">EAN-8</a><br/>
+				<a href="Developer-Guide_files/upce.html">UPC-E</a>
+				</td>
+				<td style="padding:15px 0px 15px 20px;" width="100px">
+				<a href="Developer-Guide_files/onecode.html">Intelligent Mail</a><br/>
+				<a href="Developer-Guide_files/planet.html">Planet</a><br/>
+				<a href="Developer-Guide_files/postnet.html">Postnet</a><br/>
+				<a href="Developer-Guide_files/rm4scc.html">RM4SCC</a>
+				</td>
+				<td style="padding:15px 0px 15px 20px;" width="102px">
+				<a href="Developer-Guide_files/identcode.html">Identcode</a><br/>
+				<a href="Developer-Guide_files/leitcode.html">Leitcode</a><br/>
+				<a href="Developer-Guide_files/isbn.html">ISBN</a><br/>
+				<a href="Developer-Guide_files/issn.html">ISSN</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="background:#cdd6e6; font-size:16px;" colspan="2">Numeric Barcodes</td>
+				<td style="background:#dce2ed; font-size:16px;" colspan="2">Other Linear Barcodes</td>
+			</tr>
+			<tr>
+				<td style="background:#edf1f7; padding:15px 0px 15px 20px;">
+				<a href="Developer-Guide_files/codabar.html">Codabar</a><br/>
+				<a href="Developer-Guide_files/code_11.html">Code 11</a><br/>
+				<a href="Developer-Guide_files/code25.html">Code 2 of 5</a>
+				</td>
+				<td style="background:#edf1f7; padding:15px 0px 15px 5px;">
+				<a href="Developer-Guide_files/interleaved25.html">Interleaved 2 of 5</a><br/>
+				<a href="Developer-Guide_files/msi.html">MSI Plessey</a>
+				</td>
+				<td style="padding:15px 0px 15px 20px;">
+				<a href="Developer-Guide_files/code_39.html"><b>Code 39</b></a><br/>
+				<a href="Developer-Guide_files/code_128.html"><b>Code 128</b></a><br/>
+				</td>
+				<td style="padding:15px 0px 15px 20px;">
+				<a href="Developer-Guide_files/code_93.html">Code 93</a><br/>
+				<a href="Developer-Guide_files/itf_14.html">ITF-14</a>
+				</td>
+			</tr>
+			</table>
+
+
+
+<br/><br/><br/><br/><br/><br/>
+
+
+
+
+	</td>
+
+
+</tr>
+ 
+
+
+
+
+
+
+
+<tr><td colspan="2"> 
+
+
+
+
+<script type="text/javascript">
+
+(function(){
+var navWrap=document.getElementById("auto");
+var nav1s=navWrap.getElementsByTagName("li");
+var nav2s=navWrap.getElementsByTagName("span");
+for(var i=0,len=nav1s.length;i < len;i++)
+{
+nav1s[i].onclick=(function(i)
+	{
+	return function()
+		{
+		var currentStatus = nav2s[i].style.display;
+		for(var j=0;j < len;j++)
+			{
+			nav2s[j].style.display="none";
+			nav1s[j].style.background = "url(/files/menu_li2.jpg)";
+			}
+			if (currentStatus == "block")
+			{
+			nav2s[i].style.display="none";
+			}
+			else
+			{
+			nav2s[i].style.display="block";
+			nav1s[i].style.background = "url(/files/menu_li1.jpg)";
+			}
+		}
+		
+	}
+)(i)
+}
+})()
+</script>			
+					
+					<div class="copyright">
+						<table cellpadding="0" cellspacing="0" style="font-size:12px; color:#ffffff;">
+						<tr>
+							<td rowspan="2" width="188px" style="font-size:12px; color:#ffffff;"><img src="Developer-Guide_files/logo.png" width="158px" height="33px" /></td>
+							<td style="font-size:12px; color:#ffffff;">
+							KeepAutomation provides complete barcode automation solutions for Business Application, Enterprise Developement Project, and
+							mobile applications.
+							</td>
+						</tr>
+						</table>
+					</div>
+
+
+
+
+</td></tr></table></div></body></html>
+
+
+
