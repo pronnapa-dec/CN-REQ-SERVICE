@@ -56,6 +56,106 @@ namespace REPO.Controllers
         }
         #endregion
 
+        #region Cn_Req_Cause_Master_Get
+        public List<CnReqLOVModel> Cn_Req_Cause_Master_Get()
+        {
+
+            try
+            {
+
+                DynamicParameters objParam = new DynamicParameters();
+
+                Connection();
+                mscon.Open();
+                List<CnReqLOVModel> CnReqList = SqlMapper.Query<CnReqLOVModel>(mscon, "SP_v2_CN_REQ_CAUSE_MASTER_GET", objParam, commandTimeout: 210, commandType: CommandType.StoredProcedure).ToList();
+
+                mscon.Close();
+                return CnReqList.ToList();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        #endregion
+
+        #region Cn_Req_Assige_Master_Get
+        public List<CnReqLOVModel> Cn_Req_Assige_Master_Get()
+        {
+
+            try
+            {
+
+                DynamicParameters objParam = new DynamicParameters();
+
+                Connection();
+                mscon.Open();
+                List<CnReqLOVModel> CnReqList = SqlMapper.Query<CnReqLOVModel>(mscon, "SP_v2_CN_REQ_ASSIGE_MASTER_GET", objParam, commandTimeout: 210, commandType: CommandType.StoredProcedure).ToList();
+
+                mscon.Close();
+                return CnReqList.ToList();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        #endregion
+
+        #region Cn_Req_Source_Master_Get
+        public List<CnReqLOVModel> Cn_Req_Source_Master_Get()
+        {
+
+            try
+            {
+
+                DynamicParameters objParam = new DynamicParameters();
+
+                Connection();
+                mscon.Open();
+                List<CnReqLOVModel> CnReqList = SqlMapper.Query<CnReqLOVModel>(mscon, "SP_v2_CN_REQ_SOURCE_MASTER_GET", objParam, commandTimeout: 210, commandType: CommandType.StoredProcedure).ToList();
+
+                mscon.Close();
+                return CnReqList.ToList();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        #endregion
+
+        #region Cn_Req_Status_Master_Get
+        public List<CnReqLOVModel> Cn_Req_Status_Master_Get()
+        {
+
+            try
+            {
+
+                DynamicParameters objParam = new DynamicParameters();
+
+                Connection();
+                mscon.Open();
+                List<CnReqLOVModel> CnReqList = SqlMapper.Query<CnReqLOVModel>(mscon, "SP_v2_CN_REQ_STATUS_MASTER_GET", objParam, commandTimeout: 210, commandType: CommandType.StoredProcedure).ToList();
+
+                mscon.Close();
+                return CnReqList.ToList();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        #endregion
+
         #region Cn_Req_Job_Daily_Get
         public List<CnReqModel> Cn_Req_Job_Daily_Get()
         {
@@ -155,6 +255,7 @@ namespace REPO.Controllers
 
                 objParam.Add("@cn_req_job_jobno", CnReqSourceModel.cn_req_job_jobno);
                 objParam.Add("@cn_req_job_source", CnReqSourceModel.cn_req_job_source);
+                objParam.Add("@cn_req_job_note", CnReqSourceModel.cn_req_job_note);
                 objParam.Add("@created_by", CnReqSourceModel.created_by);
 
                 Connection();
@@ -401,6 +502,32 @@ namespace REPO.Controllers
             }
         }
         #endregion
+
+        #region Cn_Req_Remark_Get
+        public List<CnReqRemarkModel> Cn_Req_Remark_Get(CnReqRemarkModel CnReqRemarkModel)
+        {
+            try
+            {
+
+                DynamicParameters objParam = new DynamicParameters();
+
+                objParam.Add("@cn_req_job_jobno", CnReqRemarkModel.cn_req_job_jobno);
+
+                Connection();
+                mscon.Open();
+                List<CnReqRemarkModel> CnVList = SqlMapper.Query<CnReqRemarkModel>(mscon, "SP_v2_CN_REQ_REMARK_GET", objParam, commandTimeout: 210, commandType: CommandType.StoredProcedure).ToList();
+
+                mscon.Close();
+                return CnVList.ToList();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
 
     }
 

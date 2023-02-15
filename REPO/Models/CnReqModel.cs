@@ -105,6 +105,7 @@ namespace REPO.Models
 		public string cn_req_job_jobno { get; set; }
 		public int cn_req_job_source { get; set; }
 		public string created_by { get; set; }
+		public string cn_req_job_note { get; set; }
 		public DateTime created_date { get; set; }
 
 	}
@@ -164,6 +165,24 @@ namespace REPO.Models
 		public int record_status { get; set; }
 		public string created_by { get; set; }
 		public DateTime created_date { get; set; }
+
+	}
+
+	public partial class CnReqRemarkModel
+	{
+		public string cn_req_job_jobno { get; set; }
+		public string cn_req_job_id { get; set; }
+		public DateTime cn_req_job_date { get; set; }
+		public string cn_req_salefile_number { get; set; }
+		public string cn_req_salefile_stkcod { get; set; }
+		public string cn_req_job_qty { get; set; }
+		public string cn_req_job_cause { get; set; }
+		public string cn_req_job_lastassige { get; set; }
+		public string cn_req_job_source { get; set; }
+		public string cn_req_job_note { get; set; }
+		public string created_by { get; set; }
+		public DateTime created_date { get; set; }
+		public int record_status { get; set; }
 
 	}
 }

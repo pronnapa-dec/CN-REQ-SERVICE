@@ -50,7 +50,6 @@ namespace API.Controllers
         }
         #endregion
 
-
         #region Cn_Req_Job_Daily_Get
         [Route("api/Cn_Req_Job_Daily_Get")]
         [HttpGet]
@@ -90,7 +89,6 @@ namespace API.Controllers
 
         }
         #endregion
-
 
         #region Cn_Req_Job_Create
         [Route("api/Cn_Req_Job_Create")]
@@ -322,7 +320,6 @@ namespace API.Controllers
         }
         #endregion
 
-
         #region Cn_Req_Status_Update
         [Route("api/Cn_Req_Status_Update")]
         [HttpPut]
@@ -540,6 +537,206 @@ namespace API.Controllers
                 _ResponseModel.result_datetime = DateTime.Now.ToString("yyyy-MM-dd hh:mm");
                 _ResponseModel.data = Cn_Req_Assige_Get;
                 _ResponseModel.length = Cn_Req_Assige_Get.Count();
+                _ResponseModel.status = "Success";
+
+                return _ResponseModel;
+
+            }
+            catch (Exception ex)
+            {
+
+                ResponseModel _ResponseModel = new ResponseModel();
+                _ResponseModel.result_datetime = DateTime.Now.ToString("yyyy-MM-dd hh:mm");
+                _ResponseModel.status = "Error";
+                _ResponseModel.error_message = ex.Message.ToString();
+                _ResponseModel.error_stacktrace = ex.StackTrace.ToString();
+                _ResponseModel.error_source = ex.Source.ToString();
+
+                return _ResponseModel;
+            }
+
+        }
+        #endregion
+
+        #region Cn_Req_Cause_Master_Get
+        [Route("api/Cn_Req_Cause_Master_Get")]
+        [HttpGet]
+        public ResponseModel Cn_Req_Cause_Master_Get()
+        {
+
+            try
+            {
+                CultureInfo cultureinfo = new CultureInfo("en-US");
+
+                CnReqRepository CnReqRepository = new CnReqRepository();
+
+                List<CnReqLOVModel> Cn_Req_Cause_Master_Get = CnReqRepository.Cn_Req_Cause_Master_Get();
+
+                ResponseModel _ResponseModel = new ResponseModel();
+
+                _ResponseModel.result_datetime = DateTime.Now.ToString("yyyy-MM-dd hh:mm");
+                _ResponseModel.data = Cn_Req_Cause_Master_Get;
+                _ResponseModel.length = Cn_Req_Cause_Master_Get.Count();
+                _ResponseModel.status = "Success";
+
+                return _ResponseModel;
+
+            }
+            catch (Exception ex)
+            {
+
+                ResponseModel _ResponseModel = new ResponseModel();
+                _ResponseModel.result_datetime = DateTime.Now.ToString("yyyy-MM-dd hh:mm");
+                _ResponseModel.status = "Error";
+                _ResponseModel.error_message = ex.Message.ToString();
+                _ResponseModel.error_stacktrace = ex.StackTrace.ToString();
+                _ResponseModel.error_source = ex.Source.ToString();
+
+                return _ResponseModel;
+            }
+
+        }
+        #endregion
+
+        #region Cn_Req_Assige_Master_Get
+        [Route("api/Cn_Req_Assige_Master_Get")]
+        [HttpGet]
+        public ResponseModel Cn_Req_Assige_Master_Get()
+        {
+
+            try
+            {
+                CultureInfo cultureinfo = new CultureInfo("en-US");
+
+                CnReqRepository CnReqRepository = new CnReqRepository();
+
+                List<CnReqLOVModel> Cn_Req_Assige_Master_Get = CnReqRepository.Cn_Req_Assige_Master_Get();
+
+                ResponseModel _ResponseModel = new ResponseModel();
+
+                _ResponseModel.result_datetime = DateTime.Now.ToString("yyyy-MM-dd hh:mm");
+                _ResponseModel.data = Cn_Req_Assige_Master_Get;
+                _ResponseModel.length = Cn_Req_Assige_Master_Get.Count();
+                _ResponseModel.status = "Success";
+
+                return _ResponseModel;
+
+            }
+            catch (Exception ex)
+            {
+
+                ResponseModel _ResponseModel = new ResponseModel();
+                _ResponseModel.result_datetime = DateTime.Now.ToString("yyyy-MM-dd hh:mm");
+                _ResponseModel.status = "Error";
+                _ResponseModel.error_message = ex.Message.ToString();
+                _ResponseModel.error_stacktrace = ex.StackTrace.ToString();
+                _ResponseModel.error_source = ex.Source.ToString();
+
+                return _ResponseModel;
+            }
+
+        }
+        #endregion
+
+        #region Cn_Req_Source_Master_Get
+        [Route("api/Cn_Req_Source_Master_Get")]
+        [HttpGet]
+        public ResponseModel Cn_Req_Source_Master_Get()
+        {
+
+            try
+            {
+                CultureInfo cultureinfo = new CultureInfo("en-US");
+
+                CnReqRepository CnReqRepository = new CnReqRepository();
+
+                List<CnReqLOVModel> Cn_Req_Source_Master_Get = CnReqRepository.Cn_Req_Source_Master_Get();
+
+                ResponseModel _ResponseModel = new ResponseModel();
+
+                _ResponseModel.result_datetime = DateTime.Now.ToString("yyyy-MM-dd hh:mm");
+                _ResponseModel.data = Cn_Req_Source_Master_Get;
+                _ResponseModel.length = Cn_Req_Source_Master_Get.Count();
+                _ResponseModel.status = "Success";
+
+                return _ResponseModel;
+
+            }
+            catch (Exception ex)
+            {
+
+                ResponseModel _ResponseModel = new ResponseModel();
+                _ResponseModel.result_datetime = DateTime.Now.ToString("yyyy-MM-dd hh:mm");
+                _ResponseModel.status = "Error";
+                _ResponseModel.error_message = ex.Message.ToString();
+                _ResponseModel.error_stacktrace = ex.StackTrace.ToString();
+                _ResponseModel.error_source = ex.Source.ToString();
+
+                return _ResponseModel;
+            }
+
+        }
+        #endregion
+
+        #region Cn_Req_Status_Master_Get
+        [Route("api/Cn_Req_Status_Master_Get")]
+        [HttpGet]
+        public ResponseModel Cn_Req_Status_Master_Get()
+        {
+
+            try
+            {
+                CultureInfo cultureinfo = new CultureInfo("en-US");
+
+                CnReqRepository CnReqRepository = new CnReqRepository();
+
+                List<CnReqLOVModel> Cn_Req_Status_Master_Get = CnReqRepository.Cn_Req_Status_Master_Get();
+
+                ResponseModel _ResponseModel = new ResponseModel();
+
+                _ResponseModel.result_datetime = DateTime.Now.ToString("yyyy-MM-dd hh:mm");
+                _ResponseModel.data = Cn_Req_Status_Master_Get;
+                _ResponseModel.length = Cn_Req_Status_Master_Get.Count();
+                _ResponseModel.status = "Success";
+
+                return _ResponseModel;
+
+            }
+            catch (Exception ex)
+            {
+
+                ResponseModel _ResponseModel = new ResponseModel();
+                _ResponseModel.result_datetime = DateTime.Now.ToString("yyyy-MM-dd hh:mm");
+                _ResponseModel.status = "Error";
+                _ResponseModel.error_message = ex.Message.ToString();
+                _ResponseModel.error_stacktrace = ex.StackTrace.ToString();
+                _ResponseModel.error_source = ex.Source.ToString();
+
+                return _ResponseModel;
+            }
+
+        }
+        #endregion
+
+        #region Cn_Req_Remark_Get
+        [Route("api/Cn_Req_Remark_Get")]
+        [HttpGet]
+        public ResponseModel Cn_Req_Remark_Get([FromUri] CnReqRemarkModel CnReqRemarkModel)
+        {
+
+            try
+            {
+                CultureInfo cultureinfo = new CultureInfo("en-US");
+
+                CnReqRepository CnReqRepository = new CnReqRepository();
+
+                List<CnReqRemarkModel> Cn_Req_Remark_Get = CnReqRepository.Cn_Req_Remark_Get(CnReqRemarkModel);
+
+                ResponseModel _ResponseModel = new ResponseModel();
+
+                _ResponseModel.result_datetime = DateTime.Now.ToString("yyyy-MM-dd hh:mm");
+                _ResponseModel.data = Cn_Req_Remark_Get;
+                _ResponseModel.length = Cn_Req_Remark_Get.Count();
                 _ResponseModel.status = "Success";
 
                 return _ResponseModel;
