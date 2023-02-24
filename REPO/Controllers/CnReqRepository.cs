@@ -528,6 +528,30 @@ namespace REPO.Controllers
         }
         #endregion
 
+        #region Cn_Req_Remark_Update
+        public void Cn_Req_Remark_Update(CnReqRemarkModel CnReqRemarkModel)
+        {
+            try
+            {
+                DynamicParameters objParam = new DynamicParameters();
+
+                objParam.Add("@cn_req_job_jobno", CnReqRemarkModel.cn_req_job_jobno);
+                objParam.Add("@cn_req_job_note", CnReqRemarkModel.cn_req_job_note);
+                objParam.Add("@created_by", CnReqRemarkModel.created_by);
+
+                Connection();
+                mscon.Open();
+                mscon.Execute("SP_v2_CN_REQ_REMARK", objParam, commandType: CommandType.StoredProcedure);
+                mscon.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
 
     }
 

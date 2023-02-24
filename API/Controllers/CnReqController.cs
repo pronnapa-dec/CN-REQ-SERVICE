@@ -758,5 +758,43 @@ namespace API.Controllers
         }
         #endregion
 
+        #region Cn_Req_Remark_Update
+        [Route("api/Cn_Req_Remark_Update")]
+        [HttpPut]
+        public ResponseModel Cn_Req_Remark_Update([FromBody] CnReqRemarkModel CnReqRemarkModel)
+        {
+
+            try
+            {
+                //  CultureInfo cultureinfo = new CultureInfo("en-US");
+
+                CnReqRepository CnReqRepository = new CnReqRepository();
+
+                CnReqRepository.Cn_Req_Remark_Update(CnReqRemarkModel);
+
+                ResponseModel _ResponseModel = new ResponseModel();
+
+                _ResponseModel.result_datetime = DateTime.Now.ToString("yyyy-MM-dd hh:mm");
+                _ResponseModel.status = "Success";
+
+                return _ResponseModel;
+
+            }
+            catch (Exception ex)
+            {
+
+                ResponseModel _ResponseModel = new ResponseModel();
+                _ResponseModel.result_datetime = DateTime.Now.ToString("yyyy-MM-dd hh:mm");
+                _ResponseModel.status = "Error";
+                _ResponseModel.error_message = ex.Message.ToString();
+                _ResponseModel.error_stacktrace = ex.StackTrace.ToString();
+                _ResponseModel.error_source = ex.Source.ToString();
+
+                return _ResponseModel;
+            }
+
+        }
+        #endregion
+
     }
 }
